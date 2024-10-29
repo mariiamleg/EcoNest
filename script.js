@@ -1,7 +1,11 @@
-window.addEventListener('scroll', function() {
-    const newItems = document.querySelector('.new-items');
-    const position = newItems.getBoundingClientRect().top;
-    if (position < window.innerHeight) {
-        newItems.classList.add('visible');
-    }
+document.addEventListener("DOMContentLoaded", function() {
+    const reviews = document.querySelectorAll('.review');
+
+    reviews.forEach((review, index) => {
+        setTimeout(() => {
+            review.style.opacity = 1;
+            review.style.transform = "translateY(0)";
+        }, index * 200); // Задержка для последовательного появления
+    });
 });
+
